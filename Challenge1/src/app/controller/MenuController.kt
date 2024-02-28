@@ -1,30 +1,10 @@
 package app.controller
 
+import app.datasource.DataSourceImpl
 import app.model.ListMenu
 
 class MenuController(val name : String? = "Ihsan") {
-    private val menu = listOf(
-        ListMenu(
-            Name = "Ayam Bakar",
-            Price = 50000,
-        ), // menu 1
-        ListMenu(
-            Name = "Ayam Goreng",
-            Price = 40000,
-        ), // menu 2
-        ListMenu(
-            Name = "Ayam Geprek",
-            Price = 40000,
-        ), // menu 3
-        ListMenu(
-            Name = "Kulit Ayam Crispy",
-            Price = 15000,
-        ), // menu 4
-        ListMenu(
-            Name = "Sate Usus Ayam",
-            Price = 5000,
-        ), // menu 5
-    )
+    private val menu = DataSourceImpl().getFruitList()
     // function to print header
     private fun printHeader(){
         println("=====================================")
